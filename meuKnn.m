@@ -13,28 +13,12 @@ function retorno = meuKnn(dadosTrain, rotuloTrain, dadosTeste, k)
     
     [matrizOrdenada ind] = sort(matDistancia(i,:));
     
-    countSpecie1 = 0;
-    countSpecie2 = 0;
-    countSpecie3 = 0;
+    currentSpecie = [];
     
     for j = 1 : k
-      currentSpecie = rotuloTrain(ind(j));
-      switch currentSpecie
-        case 1
-          countSpecie1 = countSpecie1 + 1;
-        case 2
-          countSpecie2 = countSpecie2 + 1;
-        case 3
-          countSpecie3 = countSpecie3 + 1;
-      end
+      currentSpecie(j) = rotuloTrain(ind(j));
     end
     
-    if (countSpecie1 > countSpecie2 && countSpecie1 > countSpecie3)
-      retorno(i) = 1;
-    elseif (countSpecie2 > countSpecie1 && countSpecie2 > countSpecie3)
-      retorno(i) = 2;
-    else
-      retorno(i) = 3;
-    end
+    retorno(i) = mode(currentSpecie);
   end
 end
