@@ -11,15 +11,30 @@ function retorno = meuKnn(dadosTrain, rotuloTrain, dadosTeste, k)
         matDistancia(i, c) = distancia;
     end
     
-    [matrizOrdenada ind] = sort(matDistancia(:, 1:c));
-    %rotuloPrevisto = dadosTrain(ind(1:k));
-    rotuloPrevisto = rotuloTrain(ind(1));
-    retorno(i) = rotuloPrevisto;
- %   disp(matrizOrdenada);
+    [matrizOrdenada ind] = sort(matDistancia(i,:));
     
+    countSpecie1 = 0;
+    countSpecie2 = 0;
+    countSpecie3 = 0;
+    
+    for j = 1 : k
+      currentSpecie = rotuloTrain(ind(j));
+      switch currentSpecie
+        case 1
+          countSpecie1 = countSpecie1 + 1;
+        case 2
+          countSpecie2 = countSpecie2 + 1;
+        case 3
+          countSpecie3 = countSpecie3 + 1;
+      end
+    end
+    
+    if (countSpecie1 > countSpecie2 && countSpecie1 > countSpecie3)
+      retorno(i) = 1;
+    elseif (countSpecie2 > countSpecie1 && countSpecie2 > countSpecie3)
+      retorno(i) = 2;
+    else
+      retorno(i) = 3;
+    end
   end
-  
-  %disp(retorno);
-  %disp(matrizOrdenada);]
-  %disp(ind);
 end

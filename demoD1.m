@@ -6,11 +6,10 @@ trainRots = dados.trainRots;
 k = 3;
 %Nao precisa normalziar esta
 rotuloPrevisto = meuKnn(gTrain, trainRots, gTeste, k);
-
-estaCorreto = rotuloPrevisto == testRots;
+%estaCorreto = rotuloPrevisto == testRots;
 %disp(estaCorreto);
-numCorreto = sum(estaCorreto);
+%numCorreto = sum(estaCorreto);
 %disp(numCorreto);
-totalNum = length(testRots);
-precisao = numCorreto / totalNum;
-disp(precisao);
+%totalNum = length(testRots);
+%precisao = numCorreto / totalNum;
+%disp(precisao);
