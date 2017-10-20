@@ -11,12 +11,15 @@ function retorno = meuKnn(dadosTrain, rotuloTrain, dadosTeste, k)
         matDistancia(i, c) = distancia;
     end
     
-    [matrizOrdenada ind] = sort(matDistancia(i));
-    rotuloPrevisto = dadosTrain(ind(1:k));
+    [matrizOrdenada ind] = sort(matDistancia(:, 1:c));
+    %rotuloPrevisto = dadosTrain(ind(1:k));
+    rotuloPrevisto = rotuloTrain(ind(1));
     retorno(i) = rotuloPrevisto;
+ %   disp(matrizOrdenada);
+    
   end
   
-  disp(retorno);
+  %disp(retorno);
   %disp(matrizOrdenada);]
   %disp(ind);
 end
