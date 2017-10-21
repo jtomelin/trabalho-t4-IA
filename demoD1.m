@@ -6,6 +6,8 @@ trainRots = dados.trainRots;
 
 %Resolucao k=1
 k = 1;
+
+%Carrega o vetor dos rotulos
 rotuloPrevisto = meuKnn(gTrain, trainRots, gTeste, k);
 
 estaCorreto = rotuloPrevisto == testRots;
@@ -18,6 +20,7 @@ disp(precisao);
 %Resolucao k=10
 k = 10;
 
+%Carrega o vetor dos rotulos
 rotuloPrevisto = meuKnn(gTrain, trainRots, gTeste, k);
 
 estaCorreto = rotuloPrevisto == testRots;
@@ -27,6 +30,7 @@ precisao = numCorreto / totalNum;
 
 disp(precisao);
 
+%TODO: Verificar com a professora
 %for i = 1 : 4
 %  visualizaPontos(gTrain, trainRots, i, i);
 %end
