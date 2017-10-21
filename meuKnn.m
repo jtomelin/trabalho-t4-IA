@@ -19,6 +19,6 @@ function retorno = meuKnn(dadosTrain, rotuloTrain, dadosTeste, k)
       currentSpecie(j) = rotuloTrain(ind(j));
     end
     
-    retorno(i) = mode(currentSpecie);
+    retorno(i,1) = mode(currentSpecie);
   end
 end
