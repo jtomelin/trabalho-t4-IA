@@ -30,11 +30,12 @@ precisao = numCorreto / totalNum;
 
 disp(precisao);
 
-%TODO: Verificar com a professora
-%for i = 1 : 4
-%  visualizaPontos(gTrain, trainRots, i, i);
-%end
+visualizaPontos(gTrain, trainRots, 1, 2);
+
 
 %Grupo de Dados 1
 %Q1.1. Maior precisao e 98% (k = 3).
-%Q1.2. Sim, pois quanto mais informacoes sobre o objeto de estudo, maior a probabilidade de possuir uma alta precisao.
+%Q1.2. Depende do caso, pois depende do grau de influencia da coluna sobre a 
+%precisao, uma vez que a coluna pode causar um impacto tanto positivo, mas 
+%também pode gerar impacto negativo. Para o caso atual, o valor maior pertenceu 
+%ao caso de k = 3, com precisao de 98%, com todas as caracteristicas.

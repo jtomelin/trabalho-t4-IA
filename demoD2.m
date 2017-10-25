@@ -33,9 +33,12 @@ for k = 1 : rows(gTrain)
 
 end
 
+visualizaPontos(gTrain, trainRots, 1, 2);
+
 textoFinal = sprintf('k = %i Precisao = %0.2f', kMax, precisaoMax);
 disp(textoFinal);
 
 %Grupo de Dados 2
-%Q2.1. Com k = 1, precisao = 0.68. Com k = 10, precisao = 0.78.
-%Q2.2. Porque os dados devem ser normalizados.
+%Q2.1. Com k = 1, precisao = 0.68. (Com os dados não normalizados).
+%Q2.2. Porque os dados devem ser normalizados.  Com os dados normalizados,
+%      k = 1, precisao = 0.98.
